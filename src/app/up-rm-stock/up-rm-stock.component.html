@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="UpRmStock">Update Raw Material Stock</div>
+
+    </div>
+
+        <div class="btn">       
+        <button class="btn btn-primary" (click)="ProcessDate()" >
+           Set Process Date
+        </button>
+        </div>
+       
+        <div class="btn">
+        <button class="btn btn-primary" (click)="RmDetails()" >
+            Update Raw Material Details
+        </button>
+        </div>
+
+
+        <div class="form-group" *ngIf="UpProcessDate" >
+            <label class="SearchID">Enter Raw Material ID</label>
+            <input type="number" name="orderId" [(ngModel)]="orderId" class="form-control">
+            <button class="btn btn-success" type="submit" (click)="findById()" >Search</button>
+        </div>
+        <div class="alert alert-danger" *ngIf="submitted && dataNotFound">Raw Material Id Not Found</div>
+
+
+        <div class="form-group" *ngIf="IdExist && dataFound">
+            <label class="pDate">Set Process Date</label>
+            <input type="date" name="processDate" [(ngModel)]="model.processDate" class="form-control">
+            <button class="btn btn-success" type="submit" (click)="setPrDate()" >Set</button>
+        </div>
+        <div class="form-group" *ngIf="UpRmDetails" >
+            <label class="SearchID">Enter Raw Material ID</label>
+            <input type="number" name="orderId" [(ngModel)]="model.orderId" class="form-control">
+            <label class="mDate">Set Manufacturing Date</label>
+            <input type="date" name="manufacturingDate" [(ngModel)]="model.manufacturingDate" class="form-control">
+            <label class="eDate">Set Expiry Date</label>
+            <input type="date" name="expiryDate" [(ngModel)]="model.expiryDate" class="form-control">
+            <label class="qAna">Set Quality Analysis</label>
+            <input type="text" name="qualityCheck" [(ngModel)]="model.qualityCheck" class="form-control">
+            <button class="btn btn-success" type="submit" (click)="submitRmDetails()" >Submit</button>
+        </div>
+</div>

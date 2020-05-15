@@ -1,0 +1,23 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <div class="homePage">Drink And Delight</div>
+    </div>
+
+    <div>
+        <label class="stm">Stock Management</label>
+        
+        <div class="dropdown">
+            <label>Select Operation
+            <select required name="operations" #opr="ngModel" [(ngModel)]="operations">
+                <option disabled selected value>Please Select</option>
+                <option value="UpdateRmStock">Update Raw Material Stock</option>
+                <option value="UpdatePrStock">Update Product Stock</option>
+                <option value="TrackRawMaterial">Track Raw Material Details</option>
+                <option value="TrackProduct">Track Product Details</option>
+            </select></label>{{operations}}
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="opr.invalid" (click)="selectOperation()">GO</button>
+    </div>
+
+</div>

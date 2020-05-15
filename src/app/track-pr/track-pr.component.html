@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class="trackProduct">Track Product Order</div>
+    </div>
+
+    <div class="form-group1">
+        <label class="searchID">Enter Product ID</label>
+        <input type="number" name="orderId" [(ngModel)]="orderId" class="form-control">
+        <button class="btn btn-success" type="submit" (click)="findById()">Search</button>
+    </div>
+    <div class="alert alert-danger" *ngIf="submitted && dataNotFound">Product Id Not Found</div>
+
+    
+    <div class="trProduct" *ngIf="idExist">
+
+        <div class="form-group">
+            <label class="oid">Order ID</label>
+            <input type="text" readonly value="{{model.orderId}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Product Name</label>
+            <input type="text" readonly value="{{model.productName}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Supplier Id</label>
+            <input type="text" readonly value="{{model.distributorId}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Quantity Value</label>
+            <input type="text" readonly value="{{model.quantityValue}}" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+            <label class="oid">Date of Order</label>
+            <input type="text" readonly value="{{model.dateOfOrder}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Date of Delivery</label>
+            <input type="text" readonly value="{{model.dateOfDelivery}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Price per Unit</label>
+            <input type="text" readonly value="{{model.pricePerUnit}}" class="form-control">
+        </div>
+
+    </div>
+
+    <div class="trProduct" *ngIf="idExist">
+
+        <div class="form-group">
+            <label class="oid">Total Price</label>
+            <input type="text" readonly value="{{model.totalPrice}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Delievery Status</label>
+            <input type="text" readonly value="{{model.deliveryStatus}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Warehouse Id</label>
+            <input type="text" readonly value="{{model.warehouseId}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Manufacturing Date</label>
+            <input type="text" readonly value="{{model.manufacturingDate}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Expiry Date</label>
+            <input type="text" readonly value="{{model.expiryDate}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Quality Analysis</label>
+            <input type="text" readonly value="{{model.qualityCheck}}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="oid">Exit Date</label>
+            <input type="text" readonly value="{{model.exitDate}}" class="form-control">
+        </div>
+
+    </div>
+
+</div>
